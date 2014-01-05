@@ -1,0 +1,2 @@
+bootstrap.xml app/etc/modules/Rubic_HiphopIndexer.xml
+code          app/code/community/Rubic/HiphopIndexer/

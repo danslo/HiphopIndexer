@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <global>
+        <events>
+            <controller_front_init_before>
+                <observers>
+                    <reinitialize_config>
+                        <model>Rubic_HiphopIndexer_Model_Observer</model>
+                        <method>reinitializeConfig</method>
+                        <type>singleton</type>
+                    </reinitialize_config>
+                </observers>
+            </controller_front_init_before>
+        </events>
+    </global>
+    <default>
+        <hiphop_indexer>
+            <allowed_modules>
+                <Mage_Admin />
+                <Mage_Adminhtml />
+                <Mage_AdminNotification />
+                <Mage_Bundle />
+                <Mage_Captcha />
+                <Mage_Catalog />
+                <Mage_CatalogInventory />
+                <Mage_CatalogIndex />
+                <Mage_CatalogRule />
+                <Mage_CatalogSearch />
+                <Mage_Checkout />
+                <Mage_Cms />
+                <Mage_Core />
+                <Mage_Customer />
+                <Mage_Dataflow />
+                <Mage_Directory />
+                <Mage_Eav />
+                <Mage_ImportExport />
+                <Mage_Index />
+                <Mage_Paygate />
+                <Mage_Payment />
+                <Mage_Paypal />
+                <Mage_Rating />
+                <Mage_Review />
+                <Mage_Rule />
+                <Mage_Sales />
+                <Mage_Shipping />
+                <Mage_Tag />
+                <Mage_Tax />
+                <Mage_Usa />
+                <Mage_Weee />
+                <Mage_Wishlist />
+                <Mage_XmlConnect />
+                <Rubic_HiphopIndexer />
+            </allowed_modules>
+            <allowed_paths>
+                <indexers><![CDATA[/^\/admin\/process/]]></indexers>
+            </allowed_paths>
+        </hiphop_indexer>
+    </default>
+</config>
