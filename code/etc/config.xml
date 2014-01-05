@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
+    <adminhtml>
+        <layout>
+            <updates>
+                <hiphop_indexer>
+                    <file>hiphop_indexer.xml</file>
+                </hiphop_indexer>
+            </updates>
+        </layout>
+    </adminhtml>
     <global>
         <events>
             <controller_front_init_before>
@@ -12,6 +21,11 @@
                 </observers>
             </controller_front_init_before>
         </events>
+        <helpers>
+            <hiphop_indexer>
+                <class>Rubic_HiphopIndexer_Helper</class>
+            </hiphop_indexer>
+        </helpers>
     </global>
     <default>
         <hiphop_indexer>

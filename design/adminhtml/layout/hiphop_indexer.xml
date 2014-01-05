@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_process_list>
+        <reference name="content">
+            <block type="core/template" name="hiphop_status" before="-" template="hiphop_indexer/status.phtml" />
+        </reference>
+    </adminhtml_process_list>
+</layout>

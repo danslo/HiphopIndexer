@@ -1,0 +1,9 @@
+<div id="messages">
+    <ul class="messages">
+        <?php if (Mage::helper('hiphop_indexer')->isRunningHiphop()): ?>
+        <li class="success-msg"><ul><li><span>This store's indexer is being served by HHVM.</span></li></ul></li>
+        <?php else: ?>
+        <li class="error-msg"><ul><li><span>Currently not serving this store's indexer from HHVM. Please check your loadbalancer configuration.</span></li></ul></li>
+        <?php endif; ?>
+    </ul>
+</div>

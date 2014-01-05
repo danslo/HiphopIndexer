@@ -1,2 +1,4 @@
-bootstrap.xml app/etc/modules/Rubic_HiphopIndexer.xml
-code          app/code/community/Rubic/HiphopIndexer/
+bootstrap.xml                               app/etc/modules/Rubic_HiphopIndexer.xml
+code                                        app/code/community/Rubic/HiphopIndexer/
+design/adminhtml/layout/hiphop_indexer.xml  app/design/adminhtml/default/default/layout/hiphop_indexer.xml
+design/adminhtml/template/hiphop_indexer    app/design/adminhtml/default/default/template/hiphop_indexer/

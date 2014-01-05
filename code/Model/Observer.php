@@ -65,16 +65,6 @@ class Rubic_HiphopIndexer_Model_Observer
     }
     
     /**
-     * Determines if current request is coming from hiphop.
-     * 
-     * @return bool
-     */
-    protected function _isRunningHiphop()
-    {
-        return isset($_SERVER['SERVER_SOFTWARE']) && $_SERVER['SERVER_SOFTWARE'] == 'HPHP';
-    }
-    
-    /**
      * Reinitializes the config for certain requests.
      * 
      * @param Varien_Event_Observer $observer
@@ -82,13 +72,14 @@ class Rubic_HiphopIndexer_Model_Observer
      */
     public function reinitializeConfig()
     {
-        if ($this->_isRunningHiphop() & 
-            $this->_isPathAllowed(Mage::app()->getRequest()->getRequestString())) {
+        $app = Mage::app();
+        if (Mage::helper('hiphop_indexer')->isRunningHiphop() &&
+            $this->_isPathAllowed($app->getRequest()->getRequestString())) {
             // Disallow saving of config cache.
-            Mage::app()->getCacheInstance()->banUse('config');
+            $app->getCacheInstance()->banUse('config');
             
             // Update the cache.
-            $config = Mage::app()->getConfig();
+            $config = $app->getConfig();
             $config->addAllowedModules($this->_getAllowedModules());
             $config->reinit();
         }
