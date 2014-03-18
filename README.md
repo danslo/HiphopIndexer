@@ -21,7 +21,17 @@ Even in these cases, you may want to use HHVM just for certain requests: one of 
 
 You should ensure your webserver configuration reroutes these specific requests to HHVM. This is child's play if you're already using nginx to loadbalance your store.
 
-More detailed configuration instructions will follow.
+Add this (or something similar) to your the ``server`` block in your nginx configuration. Obviously you may need to change the port or admin frontname:
+
+```
+location ~ (index.php/)?admin/process/* {
+  fastcgi_pass  127.0.0.1:9001;
+  include       fastcgi_params;
+  fastcgi_param SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+  fastcgi_param SERVER_NAME        $domain;
+}
+```
+
 
 ## License
 
