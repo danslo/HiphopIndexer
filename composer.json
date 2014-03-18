@@ -2,6 +2,7 @@
     "name": "danslo/hiphop-indexer",
     "type": "magento-module",
     "license":"Apache-2.0",
+    "version":"0.1.0",
     "description":"Magento module that ensures only specific modules are loaded when requests are made through HHVM and they match a specific request path.",
     "authors":[
         {
